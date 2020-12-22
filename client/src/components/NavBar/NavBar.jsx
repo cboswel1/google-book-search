@@ -1,9 +1,9 @@
-import React from 'react';
+import React,  { Component } from 'react';
 import "./index.css"
-import {  MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavbarToggler, MDBCollapse, MDBNavItem, MDBNavLink } from 'mdbreact';
+import {  MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavbarToggler, MDBCollapse, MDBNavItem, MDBLink } from 'mdbreact';
 import { BrowserRouter as Router } from 'react-router-dom';
 
-class FixedNavbarExample extends React.Component {
+class FixedNavbarExample extends Component {
   constructor(props) {
       super(props);
       this.state = {
@@ -32,10 +32,10 @@ class FixedNavbarExample extends React.Component {
               <MDBCollapse isOpen = { this.state.collapse } navbar>
                 <MDBNavbarNav left>
                   <MDBNavItem active>
-                      <MDBNavLink to="#">Search</MDBNavLink>
+                      <MDBLink to="/" link>Search</MDBLink>
                   </MDBNavItem>
                   <MDBNavItem>
-                      <MDBNavLink to="#">Saved</MDBNavLink>
+                      <MDBLink to="/saved" link>Saved</MDBLink>
                   </MDBNavItem>
                 </MDBNavbarNav>
               </MDBCollapse>
