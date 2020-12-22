@@ -1,0 +1,8 @@
+.navBg {
+  background: rgb(15, 40, 98);
+  background: radial-gradient(
+    circle,
+    rgba(15, 40, 98, 1) 0%,
+    rgba(9, 31, 54, 1) 100%
+  );
+}
