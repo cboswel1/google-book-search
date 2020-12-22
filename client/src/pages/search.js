@@ -37,6 +37,11 @@ class Search extends Component {
   };
 
   //handle save
+  handleSave = bookData => {
+      API.saveBook(bookData)
+        .then(res => console.log(res))
+        .catch(error => console.log(error));
+  }
 
   //map => google books json
   render() {

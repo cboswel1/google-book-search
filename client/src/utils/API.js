@@ -5,10 +5,13 @@ import axios from "axios";
 //search, save
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
-    searchBooks: function(book) {
+  searchBooks: function (book) {
     return axios.get("https://www.googleapis.com/books/v1/volumes?q=" + book);
-  }, 
-    saveBook : function(bookData){
+  },
+  saveBook: function (bookData) {
     return axios.post("/api/books", bookData);
-    }
+  },
+  savedBooks: function () {
+    return axios.get("/api/books");
+  },
 };
