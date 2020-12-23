@@ -18,6 +18,7 @@ class Saved extends Component {
 
   //display saved
   displaySaved = () => {
+      console.log("save hit");
       API.savedBooks()
       .then(res => {
           this.setState({
