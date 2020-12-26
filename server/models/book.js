@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const bookSchema = new mongoose.Schema({
+const BookSchema = new mongoose.Schema({
     title : String, 
     authors : [String], 
     description : String, 
@@ -8,6 +8,6 @@ const bookSchema = new mongoose.Schema({
     link : String
 }); 
 
-const Book = mongoose.model("Book", bookSchema); 
+const Book = mongoose.model("Book", BookSchema); 
 
 module.exports = Book;

@@ -1,5 +1,3 @@
-//API Key: AIzaSyBkq37SDDByJ0jRZPWSTkvEf_eKJ9TopWU
-
 import axios from "axios";
 
 //search, save
@@ -11,7 +9,7 @@ export default {
   saveBook: function (bookData) {
     return axios.post("/api/books", bookData);
   },
-  savedBooks: function () {
+  savedBooks: function(){
     return axios.get("/api/books");
-  },
+  }
 };

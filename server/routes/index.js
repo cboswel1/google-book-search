@@ -1,8 +1,8 @@
-const routes = require("./api");
-const router = require("express").Router();
+const router = require("express").Router(); 
+const books = require("./books.routes");
 
-//route
-router.use("/api", routes); 
 
+//use this api path. /api/book/
+router.use("/api/books", books)
 
 module.exports = router;

@@ -7,7 +7,7 @@ import ResultsDisplayed from "../components/ResultsDisplay/resultsDisplay";
 import API from "../utils/API";
 
 class Search extends Component {
-    //books title
+  //books title
   state = {
     books: [],
     title: "",
@@ -38,10 +38,10 @@ class Search extends Component {
 
   //handle save
   handleSave = bookData => {
-      API.saveBook(bookData)
-        .then(res => console.log(res))
-        .catch(error => console.log(error));
-  }
+    API.saveBook(bookData)
+      .then(res => console.log(res))
+      .catch(error => console.log(error));
+  };
 
   //map => google books json
   render() {
@@ -53,7 +53,7 @@ class Search extends Component {
           handleInputChange={this.handleInputChange}
           handleFormSubmit={this.handleFormSubmit}
         />
-        
+
         <ResultsCard>
           {this.state.books.map(books => (
             <ResultsDisplayed
@@ -62,11 +62,19 @@ class Search extends Component {
               authors={books.volumeInfo.authors}
               image={books.volumeInfo.imageLinks.thumbnail}
               description={books.volumeInfo.description}
-              link = {books.volumeInfo.infoLink}
+              link={books.volumeInfo.infoLink}
+              handleSave={() =>
+                this.handleSave({
+                  title: books.volumeInfo.title,
+                  authors: books.volumeInfo.authors,
+                  image: books.volumeInfo.imageLinks.thumbnail,
+                  description: books.volumeInfo.description,
+                  link: books.volumeInfo.infoLink,
+                })
+              }
             />
           ))}
         </ResultsCard>
-        
       </MDBContainer>
     );
   }

@@ -2,7 +2,7 @@ const express = require('express');
 const routes = require('./routes');
 const path = require('path');
 const app = express();
-const mongoose = require("mongoose");
+require("./config/db")();
 
 
 const PORT = process.env.PORT || 5000;
@@ -18,8 +18,6 @@ if (process.env.NODE_ENV === "production") {
     res.sendFile(path.join(__dirname, "../client/build/index.html"));
   });
 }
-
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/savedbooks");
 
 app.listen(PORT, () => {
   console.log('app running on PORT: ' + PORT);

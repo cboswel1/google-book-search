@@ -7,50 +7,51 @@ import SavedBooks from "../components/SavedResultsJumbo/savedResults";
 import API from "../utils/API";
 
 class Saved extends Component {
-    //books 
+  //books
   state = {
     books: [],
   };
 
   componentDidMount = () => {
-      this.displaySaved();
-  }
+    this.displaySaved();
+  };
 
   //display saved
   displaySaved = () => {
-      console.log("save hit");
-      API.savedBooks()
+    console.log("save hit");
+    API.savedBooks()
       .then(res => {
-          this.setState({
-              books : res.data
-          })
+        this.setState({
+          books: res.data,
+        });
       })
       .catch(error => console.log(error));
-  }
+  };
 
-  
-
+  handleSavedBook = bookData => {
+    API.savedBooks(bookData)
+      .then(res => console.log(res))
+      .catch(error => console.log(error));
+  };
 
   //map => google books json
   render() {
     return (
       <MDBContainer>
         <JumbotronPage />
-        
-        
+
         <SavedCard>
-          {this.state.books.map(books => (
+          {this.state.books.map(book => (
             <SavedBooks
-              key={books.id}
-              title={books.volumeInfo.title}
-              authors={books.volumeInfo.authors}
-              image={books.volumeInfo.imageLinks.thumbnail}
-              description={books.volumeInfo.description}
-              link = {books.volumeInfo.infoLink}
+              key={book.id}
+              title={book.volumeInfo.title}
+              authors={book.volumeInfo.authors}
+              image={book.volumeInfo.imageLinks.thumbnail}
+              description={book.volumeInfo.description}
+              link={book.volumeInfo.infoLink}
             />
           ))}
         </SavedCard>
-        
       </MDBContainer>
     );
   }
