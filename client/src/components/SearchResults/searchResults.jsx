@@ -7,7 +7,7 @@ const ResultsCard = props => {
       <MDBCol size = "12">
         <MDBCard reverse>
           <MDBCardBody cascade className="text-center">
-            <MDBCardTitle>Results</MDBCardTitle>
+            <MDBCardTitle>{props.heading}</MDBCardTitle>
             <div>{props.children}</div>
           </MDBCardBody>
         </MDBCard>
