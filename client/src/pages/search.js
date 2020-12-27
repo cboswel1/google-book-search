@@ -55,21 +55,21 @@ class Search extends Component {
         />
 
         <ResultsCard>
-          {this.state.books.map(books => (
+          {this.state.books.map(book => (
             <ResultsDisplayed
-              key={books.id}
-              title={books.volumeInfo.title}
-              authors={books.volumeInfo.authors}
-              image={books.volumeInfo.imageLinks.thumbnail}
-              description={books.volumeInfo.description}
-              link={books.volumeInfo.infoLink}
+              key={book.id}
+              title={book.volumeInfo.title}
+              authors={book.volumeInfo.authors}
+              image={book.volumeInfo.imageLinks.thumbnail}
+              description={book.volumeInfo.description}
+              link={book.volumeInfo.infoLink}
               handleSave={() =>
                 this.handleSave({
-                  title: books.volumeInfo.title,
-                  authors: books.volumeInfo.authors,
-                  image: books.volumeInfo.imageLinks.thumbnail,
-                  description: books.volumeInfo.description,
-                  link: books.volumeInfo.infoLink,
+                  title: book.volumeInfo.title,
+                  authors: book.volumeInfo.authors,
+                  image: book.volumeInfo.imageLinks.thumbnail,
+                  description: book.volumeInfo.description,
+                  link: book.volumeInfo.infoLink,
                 })
               }
             />

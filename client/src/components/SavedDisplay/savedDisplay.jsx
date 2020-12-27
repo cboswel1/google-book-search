@@ -8,7 +8,11 @@ const SavedCard = props => {
         <MDBCard reverse>
           <MDBCardBody cascade className="text-center">
             <MDBCardTitle>Results</MDBCardTitle>
-            <div>{props.children}</div>
+            <div>{props.title}</div>
+            <div>{props.authors}</div>
+            <div>{props.link}</div>
+            <div>{props.image}</div>
+            <div>{props.description}</div>
           </MDBCardBody>
         </MDBCard>
       </MDBCol>

@@ -22,33 +22,27 @@ class Saved extends Component {
     API.savedBooks()
       .then(res => {
         this.setState({
-          books: res.data,
+          books: res.data
         });
       })
       .catch(error => console.log(error));
-  };
-
-  handleSavedBook = bookData => {
-    API.savedBooks(bookData)
-      .then(res => console.log(res))
-      .catch(error => console.log(error));
-  };
+  }
 
   //map => google books json
   render() {
     return (
       <MDBContainer>
         <JumbotronPage />
-
+        
         <SavedCard>
           {this.state.books.map(book => (
             <SavedBooks
-              key={book.id}
-              title={book.volumeInfo.title}
-              authors={book.volumeInfo.authors}
-              image={book.volumeInfo.imageLinks.thumbnail}
-              description={book.volumeInfo.description}
-              link={book.volumeInfo.infoLink}
+              key={book._id}
+              title={book.title}
+              authors={book.authors}
+              image={book.image}
+              description={book.description}
+              link={book.link}
             />
           ))}
         </SavedCard>

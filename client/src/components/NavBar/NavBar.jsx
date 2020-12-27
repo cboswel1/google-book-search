@@ -1,7 +1,7 @@
 import React,  { Component } from 'react';
 import "./index.css"
 import {  MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavbarToggler, MDBCollapse, MDBNavItem, MDBLink } from 'mdbreact';
-import { BrowserRouter as Router } from 'react-router-dom';
+
 
 class FixedNavbarExample extends Component {
   constructor(props) {
@@ -21,8 +21,7 @@ class FixedNavbarExample extends Component {
   render() {
 
     return(
-      <div>
-        <Router>
+      
           <header>
             <MDBNavbar className="navBg" dark expand="md" scrolling fixed="top">
               <MDBNavbarBrand href="/">
@@ -41,8 +40,7 @@ class FixedNavbarExample extends Component {
               </MDBCollapse>
             </MDBNavbar>
           </header>
-        </Router>
-      </div>
+      
     );
   }
 }
