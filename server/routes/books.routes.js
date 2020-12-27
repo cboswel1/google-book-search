@@ -7,7 +7,7 @@ router
   .get((req, res) => {
     Book.find({})
       .then(data => {
-        console.log("TODO GET");
+        console.log("Book GET");
         console.log({ data });
         res.json({ success: true, data });
       })

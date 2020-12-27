@@ -16,7 +16,6 @@ class Saved extends Component {
     this.displaySaved();
   };
 
-  //delete
   handleDelete = id => {
     API.deleteBook(id)
       .then(res => this.displaySaved())
@@ -26,11 +25,12 @@ class Saved extends Component {
   //display saved
   displaySaved = () => {
     console.log("save hit");
-    API.savedBooks()
+    API.findBooks()
       .then(res => {
         this.setState({
           books: res.data,
         });
+        console.log(res.data);
       })
       .catch(error => console.log(error));
   };
@@ -42,15 +42,15 @@ class Saved extends Component {
         <JumbotronPage />
         {this.state.books.length ? (
           <ResultsCard heading="Saved Books">
-            {this.state.books.map(book => (
-              <SavedBooks 
-                key={book._id}
-                title={book.title}
-                authors={book.authors}
-                image={book.image}
-                description={book.description}
-                link={book.link}
-                handleDelete={() => this.handleDelete(book._id)}
+            {this.state.books.map(books => (
+              <SavedBooks
+                key={books._id}
+                title={books.title}
+                authors={books.authors}
+                image={books.image}
+                description={books.description}
+                link={books.link}
+                handleDelete={() => this.handleDelete(books._id)}
               />
             ))}
           </ResultsCard>
