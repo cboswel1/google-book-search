@@ -9,11 +9,17 @@ import API from "../utils/API";
 class Saved extends Component {
   //books
   state = {
-    books: [],
+    books : [],
   };
 
   componentDidMount = () => {
     this.displaySaved();
+  };
+
+  handleDelete = id => {
+    API.deleteBook(id)
+      .then(res => this.displaySaved())
+      .catch(error => console.log(error));
   };
 
   //display saved
@@ -22,30 +28,34 @@ class Saved extends Component {
     API.savedBooks()
       .then(res => {
         this.setState({
-          books: res.data
+          books: res.data,
         });
       })
       .catch(error => console.log(error));
-  }
+  };
 
   //map => google books json
   render() {
     return (
       <MDBContainer>
         <JumbotronPage />
-        
+      {this.state.books.length ? (
         <SavedCard>
-          {this.state.books.map(book => (
+          {this.state.books.map(books => (
             <SavedBooks
-              key={book._id}
-              title={book.title}
-              authors={book.authors}
-              image={book.image}
-              description={book.description}
-              link={book.link}
+              key={books._id}
+              title={books.title}
+              authors={books.authors}
+              image={books.image}
+              description={books.description}
+              link={books.link}
+              handleDelete={() => this.handleDelete(books._id)}
             />
           ))}
         </SavedCard>
+      ) : (
+        <SavedCard></SavedCard>
+      )}
       </MDBContainer>
     );
   }

@@ -4,7 +4,7 @@ import { MDBCard, MDBCardBody, MDBCardTitle, MDBRow, MDBCol} from 'mdbreact';
 const ResultsCard = props => {
   return (
     <MDBRow>
-      <MDBCol style={{ maxWidth: "40rem" }}>
+      <MDBCol size = "12">
         <MDBCard reverse>
           <MDBCardBody cascade className="text-center">
             <MDBCardTitle>Results</MDBCardTitle>
