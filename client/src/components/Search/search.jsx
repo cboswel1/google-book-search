@@ -10,11 +10,11 @@ const SearchPage = props => {
             className="form-control mr-sm-2"
             onChange={props.handleInputChange}
             value={props.value}
-            name="title"
+            name="search"
             type="text"
             placeholder="Search"
             aria-label="Search"
-            id="title"
+            id="search"
           />
           <MDBBtn
             onClick={props.handleFormSubmit}

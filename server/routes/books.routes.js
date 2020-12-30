@@ -5,24 +5,18 @@ const router = require("express").Router();
 router
   .route("/")
   .get((req, res) => {
-    Book.find({})
+    Book.find(req.query)
       .then(data => {
-        console.log("Book GET");
-        console.log({ data });
-        res.json({ success: true, data });
+        // console.log("Book GET");
+        // console.log({ data });
+        res.json({ data });
       })
       .catch(error => {
         res.json({ success: false });
       });
   })
   .post((req, res) => {
-    Book.create({
-      title: req.body.title,
-      authors: req.body.authors,
-      description: req.body.description,
-      image: req.body.image,
-      link: req.body.link,
-    })
+    Book.create(req.body)
       .then(data => {
         res.json({ success: true, data });
       })

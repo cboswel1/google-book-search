@@ -1,19 +1,51 @@
-import React from 'react';
-import { MDBCard, MDBCardBody, MDBCardTitle, MDBRow, MDBCol} from 'mdbreact';
+import { MDBContainer } from "mdbreact";
+import React, { useState } from "react";
+import SearchPage from "../Search/search";
+import ResultsInfo from "../ResultsDisplay/resultsDisplay";
+import API from "../../utils/API";
 
-const ResultsCard = props => {
+function Search() {
+  //books title
+  const [result, setResult] = useState([]);
+  const [search, setSearch] = useState("");
+
+  async function findBooks(book) {
+    //input
+    await API.searchBooks(book)
+
+      .then(res => setResult(res.data.items))
+      .catch(error => console.log(error));
+  }; 
+
+  console.log(result);
+
+  function handleInputChange(e) {
+    e.preventDefault();
+    const value = e.target.value;
+    setSearch(value);
+    console.log(value)
+  }
+
+  //form
+  function handleFormSubmit(e) {
+    e.preventDefault();
+    findBooks(search);
+    console.log(search)
+  }
+
+  //map => google books json
+
   return (
-    <MDBRow>
-      <MDBCol size = "12">
-        <MDBCard reverse>
-          <MDBCardBody cascade className="text-center">
-            <MDBCardTitle>{props.heading}</MDBCardTitle>
-            <div>{props.children}</div>
-          </MDBCardBody>
-        </MDBCard>
-      </MDBCol>
-    </MDBRow>
-  )
+    <MDBContainer>
+      <SearchPage
+        value={search}
+        handleInputChange={handleInputChange}
+        handleFormSubmit={handleFormSubmit}
+      />
+
+      <ResultsInfo results={result} />
+    </MDBContainer>
+  );
 }
 
-export default ResultsCard;
+export default Search;

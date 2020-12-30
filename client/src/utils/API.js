@@ -6,16 +6,8 @@ export default {
   searchBooks: function (book) {
     return axios.get("https://www.googleapis.com/books/v1/volumes?q=" + book);
   },
-  //save
-  saveBook: function (bookData) {
-    return axios.post("/api/books", bookData);
-  },
-  //find
-  findBooks: function () {
-    return axios.get("/api/books");
-  },
-  //delete
+  
   deleteBook: function (id) {
-    return axios.delete("/api/books/" + id);
+    return axios.delete("/api/books/" + id)
   },
 };

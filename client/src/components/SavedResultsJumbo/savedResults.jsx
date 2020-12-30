@@ -1,26 +1,43 @@
 import React from "react";
-import { MDBBtn } from "mdbreact";
+import { MDBBtn, MDBRow, MDBCol } from "mdbreact";
 
 //add mdb
 const SavedBooks = props => {
   return (
     <span>
-      <h3>{props.title}</h3>
-      <h4>{props.authors}</h4>
-      <a href={props.link}>Link</a>
-      <img src={props.image} alt="..." />
-      <p>{props.description}</p>
-
-      <MDBBtn
-        onClick={props.handleDelete}
+      <MDBRow className="pb-3">
+        <MDBCol size="8">
+          <h3>{props.title}</h3>
+        </MDBCol>
+        <MDBCol size="4">
+          <h4>{props.authors}</h4>
+        </MDBCol>
+      </MDBRow>
+      <MDBRow>
+        <MDBCol size="2">
+          <h3>
+            <img src={props.image} className="img-fluid" alt="..." />
+          </h3>
+        </MDBCol>
+        <MDBCol size="10">
+          <p className="text-justify">{props.description}</p>
+        </MDBCol>
+      </MDBRow>
+      <MDBRow className="pt-3">
+        <MDBCol size="8"></MDBCol>
+        <MDBCol size="4">
+        <MDBBtn
         gradient="aqua"
         rounded
         size="sm"
         type="submit"
-        className="mr-auto"
-      >
-        Delete
-      </MDBBtn>
+        className="mr-auto">
+          <a href={props.link}>More</a>
+        </MDBBtn>
+        </MDBCol>
+      </MDBRow>
+
+      <hr></hr>
     </span>
   );
 };
