@@ -1,11 +1,11 @@
 import React from "react";
-import { MDBBtn, MDBRow, MDBCol } from "mdbreact";
+import { MDBRow, MDBCol } from "mdbreact";
 
 //add mdb
 const SavedBooks = props => {
   return (
     <span>
-      <MDBRow className="pb-3">
+      <MDBRow className="pb-3 pt-3">
         <MDBCol size="8">
           <h3>{props.title}</h3>
         </MDBCol>
@@ -26,14 +26,8 @@ const SavedBooks = props => {
       <MDBRow className="pt-3">
         <MDBCol size="8"></MDBCol>
         <MDBCol size="4">
-        <MDBBtn
-        gradient="aqua"
-        rounded
-        size="sm"
-        type="submit"
-        className="mr-auto">
-          <a href={props.link}>More</a>
-        </MDBBtn>
+          
+        
         </MDBCol>
       </MDBRow>
 

@@ -7,6 +7,7 @@ import {
   MDBRow,
   MDBCol,
 } from "mdbreact";
+import "./style.css"
 
 const JumbotronPage = () => {
   return (
@@ -14,8 +15,8 @@ const JumbotronPage = () => {
       <MDBRow>
         <MDBCol>
           <MDBJumbotron>
-            <h2 className="h1 display-3">Google Books</h2>
-            <p className="lead">
+            <h2 className="h1 display-3 header-text">Google Books</h2>
+            <p className="lead header-text">
               A search and save directory of all your favorite books. 
             </p>
             

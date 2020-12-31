@@ -6,7 +6,7 @@ const SearchDisplay = () => {
   return (
     <React.Fragment>
       <JumbotronPage />
-      <Search />Hello from search
+      <Search />
     </React.Fragment>
   );
 };
