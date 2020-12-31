@@ -45,13 +45,13 @@ const Saved = () => {
       <MDBRow>
         <MDBCol size="md-12">
           {state.books.length ? (
-            <SavedCard heading="Saved Books">
+            <SavedCard>
               {state.books.map(book => {
                 return (
                   <div>
                     <MDBBtn
                       onClick={() => handleDelete(book._id)}
-                      gradient="aqua"
+                      outline color="elegant-color"
                       rounded
                       size="sm"
                       type="submit"
@@ -60,7 +60,7 @@ const Saved = () => {
                       Remove
                     </MDBBtn>
                     <MDBBtn
-                      gradient="aqua"
+                      outline color="elegant-color"
                       rounded
                       size="sm"
                       type="submit"
@@ -81,7 +81,7 @@ const Saved = () => {
               })}
             </SavedCard>
           ) : (
-            <SavedCard heading="">text</SavedCard>
+            <SavedCard heading=""></SavedCard>
           )}
         </MDBCol>
       </MDBRow>

@@ -15,7 +15,7 @@ function Search() {
 
       .then(res => setResult(res.data.items))
       .catch(error => console.log(error));
-  }
+  }; 
 
   console.log(result);
 
@@ -23,14 +23,14 @@ function Search() {
     event.preventDefault();
     const value = event.target.value;
     setSearch(value);
-    console.log(value);
+    console.log(value)
   }
 
   //form
   function handleFormSubmit(event) {
     event.preventDefault();
     findBooks(search);
-    console.log(search);
+    console.log(search)
   }
 
   //map => google books json

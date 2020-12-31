@@ -19,7 +19,6 @@ const JumbotronPage = () => {
             <p className="lead header-text">
               A search and save directory of all your favorite books. 
             </p>
-            
           </MDBJumbotron>
         </MDBCol>
       </MDBRow>

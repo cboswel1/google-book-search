@@ -23,7 +23,7 @@ function ResultsDisplayed(props) {
 
   return (
     <span>
-      <MDBRow className="pb-3">
+      <MDBRow className="pb-3 pt-3">
         <MDBCol size="8">
           <h3>{props.volumeInfo.title}</h3>
         </MDBCol>
@@ -50,7 +50,7 @@ function ResultsDisplayed(props) {
         <MDBCol size="4">
           <MDBBtn
             onClick={handleSave}
-            gradient="aqua"
+            outline color="elegant-color"
             rounded
             size="sm"
             type="submit"
@@ -59,7 +59,7 @@ function ResultsDisplayed(props) {
             Save
           </MDBBtn>
           <MDBBtn
-            gradient="aqua"
+            outline color="elegant-color"
             rounded
             size="sm"
             type="submit"

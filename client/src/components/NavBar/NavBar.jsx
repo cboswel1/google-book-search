@@ -30,7 +30,7 @@ class FixedNavbarExample extends Component {
               <MDBNavbarToggler onClick={ this.onClick } />
               <MDBCollapse isOpen = { this.state.collapse } navbar>
                 <MDBNavbarNav left>
-                  <MDBNavItem active>
+                  <MDBNavItem >
                       <MDBLink to="/" link>Search</MDBLink>
                   </MDBNavItem>
                   <MDBNavItem>
