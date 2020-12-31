@@ -50,7 +50,8 @@ function ResultsDisplayed(props) {
         <MDBCol size="4">
           <MDBBtn
             onClick={handleSave}
-            outline color="elegant-color"
+            outline
+            color="elegant-color"
             rounded
             size="sm"
             type="submit"
@@ -59,7 +60,8 @@ function ResultsDisplayed(props) {
             Save
           </MDBBtn>
           <MDBBtn
-            outline color="elegant-color"
+            outline
+            color="elegant-color"
             rounded
             size="sm"
             type="submit"

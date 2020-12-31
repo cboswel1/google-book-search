@@ -1,5 +1,5 @@
-import React from 'react';
-import { MDBCard, MDBCardBody, MDBCardTitle, MDBRow, MDBCol} from 'mdbreact';
+import React from "react";
+import { MDBCard, MDBCardBody, MDBCardTitle, MDBRow, MDBCol } from "mdbreact";
 
 const SavedCard = props => {
   return (
@@ -13,7 +13,7 @@ const SavedCard = props => {
         </MDBCard>
       </MDBCol>
     </MDBRow>
-  )
-}
+  );
+};
 
 export default SavedCard;

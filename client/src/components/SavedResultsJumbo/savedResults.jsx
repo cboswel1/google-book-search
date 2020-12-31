@@ -25,10 +25,7 @@ const SavedBooks = props => {
       </MDBRow>
       <MDBRow className="pt-3">
         <MDBCol size="8"></MDBCol>
-        <MDBCol size="4">
-          
-        
-        </MDBCol>
+        <MDBCol size="4"></MDBCol>
       </MDBRow>
 
       <hr></hr>

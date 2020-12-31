@@ -9,7 +9,7 @@ import API from "../utils/API";
 
 const Saved = () => {
   const [state, dispatch] = useGlobalContext();
-  console.log({ state });
+  // console.log({ state });
 
   function handleDelete(id) {
     API.deleteBook(id)
@@ -21,7 +21,7 @@ const Saved = () => {
     try {
       const response = await fetch("/api/books");
       const json = await response.json();
-      console.log({ json });
+      // console.log({ json });
 
       dispatch({ type: "setBooks", payload: json.data });
     } catch (err) {
@@ -51,7 +51,8 @@ const Saved = () => {
                   <div>
                     <MDBBtn
                       onClick={() => handleDelete(book._id)}
-                      outline color="elegant-color"
+                      outline
+                      color="elegant-color"
                       rounded
                       size="sm"
                       type="submit"
@@ -60,7 +61,8 @@ const Saved = () => {
                       Remove
                     </MDBBtn>
                     <MDBBtn
-                      outline color="elegant-color"
+                      outline
+                      color="elegant-color"
                       rounded
                       size="sm"
                       type="submit"
