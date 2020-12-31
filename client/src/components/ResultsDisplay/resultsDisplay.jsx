@@ -3,12 +3,12 @@ import { MDBBtn, MDBRow, MDBCol } from "mdbreact";
 
 //add mdb
 function ResultsDisplayed(props) {
-  function handleSave(e) {
-    e.preventDefault();
+  function handleSave(event) {
+    event.preventDefault();
 
-    fetch("/api/book", {
-      headers: { "Content-Type": "application/json" },
+    fetch("/api/books", {
       method: "POST",
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         title: props.volumeInfo.title,
         authors: props.volumeInfo.authors,
@@ -82,7 +82,7 @@ function ResultsInfo(props) {
         <ResultsDisplayed key={result.id} {...result} />
       ))}
     </ul>
-  )
+  );
 }
 
 export default ResultsInfo;

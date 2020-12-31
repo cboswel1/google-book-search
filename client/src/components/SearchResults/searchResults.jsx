@@ -15,22 +15,22 @@ function Search() {
 
       .then(res => setResult(res.data.items))
       .catch(error => console.log(error));
-  }; 
+  }
 
   console.log(result);
 
-  function handleInputChange(e) {
-    e.preventDefault();
-    const value = e.target.value;
+  function handleInputChange(event) {
+    event.preventDefault();
+    const value = event.target.value;
     setSearch(value);
-    console.log(value)
+    console.log(value);
   }
 
   //form
-  function handleFormSubmit(e) {
-    e.preventDefault();
+  function handleFormSubmit(event) {
+    event.preventDefault();
     findBooks(search);
-    console.log(search)
+    console.log(search);
   }
 
   //map => google books json
