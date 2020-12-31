@@ -37,7 +37,7 @@ This repository can be cloned from Github.com/cboswel1/google-books-search. You 
 This project is licensed by [MIT](https://opensource.org/licenses/MIT)
 
 
-## Author
+## Contributing
 Christian Boswell
 
 
