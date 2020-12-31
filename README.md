@@ -11,7 +11,7 @@ Google Book Search is a React Application that utilizes the Google Books API and
 [Heroku Deploy](https://mighty-mountain-35814.herokuapp.com/)
 
 ## Preview 
-(https://github.com/cboswel1/google-book-search/blob/main/client/assets/googledemo.gif?raw=true)
+![](https://github.com/cboswel1/google-book-search/blob/main/client/assets/googledemo.gif?raw=true)
 
 ## Table of Contents 
   - [Installation](#installation)
