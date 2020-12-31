@@ -8,7 +8,10 @@
 Google Book Search is a React Application that utilizes the Google Books API and MongoDB to create a fully functional, lightweight search engine which also allows you to store your favorite books for later viewing. 
 
 ## Live Deploy 
-[Heroku Deploy]()
+[Heroku Deploy](https://mighty-mountain-35814.herokuapp.com/)
+
+## Preview 
+(https://github.com/cboswel1/google-book-search/blob/main/client/assets/googledemo.gif?raw=true)
 
 ## Table of Contents 
   - [Installation](#installation)
@@ -27,11 +30,6 @@ This repository can be cloned from Github.com/cboswel1/google-books-search. You 
   - [React](https://reactjs.org/)
   - [NPM](https://www.npmjs.com/)
   
-
-## Preview 
-![]()
-
-
 
 ## License
 This project is licensed by [MIT](https://opensource.org/licenses/MIT)
