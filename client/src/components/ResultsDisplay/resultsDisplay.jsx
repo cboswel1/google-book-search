@@ -12,7 +12,7 @@ function ResultsDisplayed(props) {
       body: JSON.stringify({
         title: props.volumeInfo.title,
         authors: props.volumeInfo.authors,
-        image: props.volumeInfo.imageLinks.thumbnail,
+        image: props.volumeInfo.imageLinks.thumbnail ? props.volumeInfo.imageLinks.thumbnail : null,
         description: props.volumeInfo.description,
         link: props.volumeInfo.infoLink,
       }),
