@@ -35,7 +35,7 @@ function ResultsDisplayed(props) {
         <MDBCol size="2">
           <h3>
             <img
-              src={props.volumeInfo.imageLinks.thumbnail}
+              src={props.volumeInfo.imageLinks.thumbnail ? props.volumeInfo.imageLinks.thumbnail : null}
               className="img-fluid"
               alt="..."
             />
